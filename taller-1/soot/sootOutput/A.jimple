@@ -1,0 +1,82 @@
+public class A extends java.lang.Object
+{
+/*A.java*/
+
+/*0*/
+    public void <init>()
+    {
+        A this;
+
+        this := @this: A;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+/*1*/
+/*this has reaching def: this := @this: A*/
+
+        return;
+/*1*/
+    }
+
+/*2*/
+    public static int main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        int $stack3, $stack4, c, a#7;
+        byte a;
+
+        args := @parameter0: java.lang.String[];
+
+        a = 8;
+/*3*/
+
+        $stack3 = lengthof args;
+/*4*/
+/*args has reaching def: args := @parameter0: java.lang.String[]*/
+
+        if $stack3 <= 2 goto label1;
+/*4*/
+/*$stack3 has reaching def: $stack3 = lengthof args*/
+
+        a = 5;
+/*5*/
+
+     label1:
+        c = 1;
+/*6*/
+/*6*/
+
+     label2:
+        if c > a goto label3;
+/*7*/
+/*c has reaching def: c = 1*/
+/*c has reaching def: c = c + c*/
+/*a has reaching def: a = 8*/
+/*a has reaching def: a = 5*/
+
+        c = c + c;
+/*8*/
+/*c has reaching def: c = 1*/
+/*c has reaching def: c = c + c*/
+/*c has reaching def: c = 1*/
+/*c has reaching def: c = c + c*/
+
+        goto label2;
+/*8*/
+
+     label3:
+        a#7 = c - a;
+/*10*/
+/*c has reaching def: c = 1*/
+/*c has reaching def: c = c + c*/
+/*a has reaching def: a = 8*/
+/*a has reaching def: a = 5*/
+
+        $stack4 = a#7 + 0;
+/*13*/
+/*a#7 has reaching def: a#7 = c - a*/
+
+        return $stack4;
+/*13*/
+/*$stack4 has reaching def: $stack4 = a#7 + 0*/
+    }
+}

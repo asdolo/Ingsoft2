@@ -1,1 +1,9 @@
+# MacOS
 .DS_Store
+
+# IntelliJ IDEA
+.idea
+*.iml
+
+# Java
+*.class

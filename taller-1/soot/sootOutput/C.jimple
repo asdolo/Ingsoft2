@@ -1,0 +1,50 @@
+public class C extends java.lang.Object
+{
+/*C.java*/
+/*[inner=C$Cell, outer=C, name=Cell,flags=10]*/
+/*soot.tagkit.InnerClassAttribute@65839bbd*/
+
+/*0*/
+    public void <init>()
+    {
+        C this;
+
+        this := @this: C;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+/*1*/
+/*[not null]*/
+
+        return;
+/*1*/
+    }
+
+/*6*/
+    public int exercise3(C$Cell, C$Cell)
+    {
+        C this;
+        C$Cell c1, c2;
+        int $stack3;
+
+        this := @this: C;
+
+        c1 := @parameter0: C$Cell;
+
+        c2 := @parameter1: C$Cell;
+
+        c1.<C$Cell: int value> = 1;
+/*7*/
+/*[unknown]*/
+
+        c2.<C$Cell: int value> = 2;
+/*8*/
+/*[unknown]*/
+
+        $stack3 = c1.<C$Cell: int value>;
+/*10*/
+/*[not null]*/
+
+        return $stack3;
+/*10*/
+    }
+}
