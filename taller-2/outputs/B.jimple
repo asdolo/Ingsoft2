@@ -1,0 +1,34 @@
+public class B extends java.lang.Object
+{
+/*B.java*/
+
+    public void <init>()
+    {
+        B r0;
+
+        r0 := @this: B;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public int ejercicio2(int, int)
+    {
+        int i0, i1, i2, i4;
+        B r0;
+
+        r0 := @this: B;
+
+        i2 := @parameter0: int;
+
+        i0 := @parameter1: int;
+
+        i1 = i0 - i0;
+
+        i4 = i2 / i1;
+/*Possible division by zero here*/
+
+        return i4;
+    }
+}
