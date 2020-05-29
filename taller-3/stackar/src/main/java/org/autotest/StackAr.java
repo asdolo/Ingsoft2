@@ -53,7 +53,13 @@ public class StackAr {
 
 	@CheckRep
 	public boolean repOK() {
-		return true;
+		for (int i = this.readIndex + 1; i < this.elems.length; i++) {
+			if (this.elems[i] != null) {
+				return false;
+			}
+		}
+	
+		return (this.elems != null && this.readIndex >= -1 && this.readIndex < elems.length);
 	}
 
 	public Object top() throws IllegalStateException {
