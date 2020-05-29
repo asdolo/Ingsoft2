@@ -47,62 +47,69 @@ public class StackAr {
 <span class="fc" id="L47">			throw new IllegalStateException();</span>
 		}
 <span class="fc" id="L49">		Object rv = this.top();</span>
-<span class="fc" id="L50">		readIndex--;</span>
-<span class="fc" id="L51">		return rv;</span>
+<span class="fc" id="L50">		this.elems[readIndex] = null;</span>
+<span class="fc" id="L51">		readIndex--;</span>
+<span class="fc" id="L52">		return rv;</span>
 	}
 
 	@CheckRep
 	public boolean repOK() {
-<span class="nc" id="L56">		return true;</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">		for (int i = this.readIndex + 1; i &lt; this.elems.length; i++) {</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">			if (this.elems[i] != null) {</span>
+<span class="nc" id="L59">				return false;</span>
+			}
+		}
+	
+<span class="nc bnc" id="L63" title="All 6 branches missed.">		return (this.elems != null &amp;&amp; this.readIndex &gt;= -1 &amp;&amp; this.readIndex &lt; elems.length);</span>
 	}
 
 	public Object top() throws IllegalStateException {
-<span class="fc bfc" id="L60" title="All 2 branches covered.">		if (isEmpty()) {</span>
-<span class="fc" id="L61">			throw new IllegalStateException();</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">		if (isEmpty()) {</span>
+<span class="fc" id="L68">			throw new IllegalStateException();</span>
 		}
-<span class="fc" id="L63">		Object rv = this.elems[readIndex];</span>
-<span class="fc" id="L64">		return rv;</span>
+<span class="fc" id="L70">		Object rv = this.elems[readIndex];</span>
+<span class="fc" id="L71">		return rv;</span>
 	}
 
 	@Override
 	public int hashCode() {
-<span class="nc" id="L69">		final int prime = 31;</span>
-<span class="nc" id="L70">		int result = 1;</span>
-<span class="nc" id="L71">		result = prime * result + Arrays.hashCode(elems);</span>
-<span class="nc" id="L72">		result = prime * result + readIndex;</span>
-<span class="nc" id="L73">		return result;</span>
+<span class="nc" id="L76">		final int prime = 31;</span>
+<span class="nc" id="L77">		int result = 1;</span>
+<span class="nc" id="L78">		result = prime * result + Arrays.hashCode(elems);</span>
+<span class="nc" id="L79">		result = prime * result + readIndex;</span>
+<span class="nc" id="L80">		return result;</span>
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-<span class="pc bpc" id="L78" title="1 of 2 branches missed.">		if (this == obj)</span>
-<span class="nc" id="L79">			return true;</span>
-<span class="fc bfc" id="L80" title="All 2 branches covered.">		if (obj == null)</span>
-<span class="fc" id="L81">			return false;</span>
-<span class="fc bfc" id="L82" title="All 2 branches covered.">		if (getClass() != obj.getClass())</span>
-<span class="fc" id="L83">			return false;</span>
-<span class="fc" id="L84">		StackAr other = (StackAr) obj;</span>
-<span class="fc bfc" id="L85" title="All 2 branches covered.">		if (!Arrays.equals(elems, other.elems))</span>
-<span class="fc" id="L86">			return false;</span>
-<span class="fc bfc" id="L87" title="All 2 branches covered.">		if (readIndex != other.readIndex)</span>
+<span class="pc bpc" id="L85" title="1 of 2 branches missed.">		if (this == obj)</span>
+<span class="nc" id="L86">			return true;</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">		if (obj == null)</span>
 <span class="fc" id="L88">			return false;</span>
-<span class="fc" id="L89">		return true;</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">		if (getClass() != obj.getClass())</span>
+<span class="fc" id="L90">			return false;</span>
+<span class="fc" id="L91">		StackAr other = (StackAr) obj;</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">		if (!Arrays.equals(elems, other.elems))</span>
+<span class="fc" id="L93">			return false;</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">		if (readIndex != other.readIndex)</span>
+<span class="fc" id="L95">			return false;</span>
+<span class="fc" id="L96">		return true;</span>
 	}
 
 	@Override
 	public String toString() {
-<span class="fc" id="L94">		StringBuffer b = new StringBuffer();</span>
-<span class="fc" id="L95">		b.append(&quot;[&quot;);</span>
-<span class="fc bfc" id="L96" title="All 2 branches covered.">		for (int i = 0; i &lt;= readIndex; i++) {</span>
-<span class="fc bfc" id="L97" title="All 2 branches covered.">			if (i &gt; 0) {</span>
-<span class="fc" id="L98">				b.append(&quot;,&quot;);</span>
+<span class="fc" id="L101">		StringBuffer b = new StringBuffer();</span>
+<span class="fc" id="L102">		b.append(&quot;[&quot;);</span>
+<span class="fc bfc" id="L103" title="All 2 branches covered.">		for (int i = 0; i &lt;= readIndex; i++) {</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">			if (i &gt; 0) {</span>
+<span class="fc" id="L105">				b.append(&quot;,&quot;);</span>
 			}
-<span class="fc" id="L100">			Object o = elems[i];</span>
-<span class="fc" id="L101">			String s = String.valueOf(o);</span>
-<span class="fc" id="L102">			b.append(s);</span>
+<span class="fc" id="L107">			Object o = elems[i];</span>
+<span class="fc" id="L108">			String s = String.valueOf(o);</span>
+<span class="fc" id="L109">			b.append(s);</span>
 		}
-<span class="fc" id="L104">		b.append(&quot;]&quot;);</span>
-<span class="fc" id="L105">		return b.toString();</span>
+<span class="fc" id="L111">		b.append(&quot;]&quot;);</span>
+<span class="fc" id="L112">		return b.toString();</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
