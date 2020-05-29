@@ -47,6 +47,7 @@ public class StackAr {
 			throw new IllegalStateException();
 		}
 		Object rv = this.top();
+		this.elems[readIndex] = null;
 		readIndex--;
 		return rv;
 	}
