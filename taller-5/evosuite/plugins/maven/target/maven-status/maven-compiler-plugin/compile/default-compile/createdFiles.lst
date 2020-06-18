@@ -1,0 +1,15 @@
+org/evosuite/maven/util/FileUtils.class
+org/evosuite/maven/util/EvoSuiteRunner.class
+org/evosuite/maven/util/EvoSuiteRunner$2.class
+org/evosuite/maven/CoverageMojo.class
+org/evosuite/maven/util/EvoSuiteRunner$3.class
+org/evosuite/maven/ExportMojo.class
+org/evosuite/maven/GenerateMojo.class
+org/evosuite/maven/util/EvoSuiteRunner$4.class
+org/evosuite/maven/CleanMojo.class
+org/evosuite/maven/util/ProjectUtils.class
+org/evosuite/maven/PrepareMojo.class
+HelpMojo.class
+org/evosuite/maven/InfoMojo.class
+org/evosuite/maven/util/HistoryChanges.class
+org/evosuite/maven/util/EvoSuiteRunner$1.class
