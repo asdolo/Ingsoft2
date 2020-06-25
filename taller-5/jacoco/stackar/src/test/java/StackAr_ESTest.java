@@ -210,4 +210,17 @@ public class StackAr_ESTest {
       stackAr0.top();
       assertEquals(1, stackAr0.size());
   }
+
+  @Test(timeout = 4000)
+  public void test21()  throws Throwable  {
+      StackAr stackAr0 = new StackAr(1);
+      stackAr0.push("hello");
+      assertEquals("[hello]", stackAr0.toString());
+  }
+
+  @Test(timeout = 4000)
+  public void test22()  throws Throwable  {
+      StackAr stackAr0 = new StackAr();
+      assertEquals(129083679, stackAr0.hashCode());
+  }
 }
